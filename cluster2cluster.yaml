@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-to-cluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo.clustertocluster
+  template:
+    metadata:
+      labels:
+        app: mongo.clustertocluster
+    spec:
+      containers:
+        - name: mongosync
+          image: <image-location>
+          ports:
+            - name: api
+              containerPort: 27182
+              protocol: TCP
+          env:
+          - name: sourceCluster
+            value: <mongodb URI>
+          - name: targetCluster
+            value: <mongodb URI>
