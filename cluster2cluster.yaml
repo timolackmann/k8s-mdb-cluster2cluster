@@ -20,7 +20,7 @@ spec:
               containerPort: 27182
               protocol: TCP
           env:
-          - name: sourceCluster
+          - name: SOURCECLUSTER
             value: <mongodb URI>
-          - name: targetCluster
+          - name: TARGETCLUSTER
             value: <mongodb URI>
