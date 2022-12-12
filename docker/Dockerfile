@@ -1,8 +1,8 @@
 FROM ubuntu 
-RUN apt update  \
-     apt install -y wget \
-     wget https://fastdl.mongodb.org/tools/mongosync/mongosync-ubuntu2004-x86_64-1.0.0.tgz \
-     tar -zxvf mongosync-*.tgz \
+RUN apt update;  \
+     apt install -y wget; \
+     wget https://fastdl.mongodb.org/tools/mongosync/mongosync-ubuntu2004-x86_64-1.0.0.tgz; \
+     tar -zxvf mongosync-*.tgz; \
      cp mongosync-ubuntu2004-x86_64-1.0.0/bin/mongosync /usr/local/bin/ 
 EXPOSE 27182
 
